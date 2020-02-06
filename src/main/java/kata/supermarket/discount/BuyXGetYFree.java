@@ -35,6 +35,12 @@ public class BuyXGetYFree implements IOffer {
         this.freeQuantity = freeQuantity;
     }
 
+    public BuyXGetYFree(String discountProductName, int buyQuantity, int freeQuantity) {
+        this.discountProductName = discountProductName;
+        this.buyQuantity = buyQuantity;
+        this.freeQuantity = freeQuantity;
+    }
+
     @Override
     public BigDecimal applyDiscount(List<Item> cart) {
         BigDecimal reduction = BigDecimal.ZERO;
@@ -47,6 +53,7 @@ public class BuyXGetYFree implements IOffer {
         }
         int freeNo = totalQ/(buyQuantity+freeQuantity);
         reduction = reduction.multiply(new BigDecimal(freeNo));
+        System.out.println("returning reduction = "+reduction);
         return reduction;
     }
 }
