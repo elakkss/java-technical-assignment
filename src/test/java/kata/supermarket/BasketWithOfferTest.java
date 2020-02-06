@@ -15,11 +15,15 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class to check the basket behaves properly with the offer applied.
+ * The offer being used in the class is Buy 1 Milk and Get 1 Milk free.
+ *
+ */
 public class BasketWithOfferTest {
 
     @BeforeAll
     static void setOffer() {
-        System.out.println("Executing offer");
         BuyXGetYFree buyOffer = new BuyXGetYFree("Milk",1,1);
         OfferManager.addOffer(buyOffer);
     }

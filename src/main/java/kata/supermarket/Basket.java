@@ -42,11 +42,12 @@ public class Basket {
         }
 
         /**
-         * TODO: This could be a good place to apply the results of
-         *  the discount calculations.
-         *  It is not likely to be the best place to do those calculations.
-         *  Think about how Basket could interact with something
-         *  which provides that functionality.
+         *
+         * Applying discounts on all the items in the basket.
+         * All offers should extend the IOffer interface and applyDiscount method
+         * should return a BigDecimal representing the reduction.
+         *
+         * @return - BigDecimal representation of total reduction of the basket.
          */
         private BigDecimal discounts() {
             return  OfferManager.OFFERS.stream().map(o-> o.applyDiscount(this.items))
